@@ -16,13 +16,12 @@ import java.util.stream.Collectors;
 public class RelationalDataAccessApplication implements CommandLineRunner {
 
 	private static final Logger log = LoggerFactory.getLogger(RelationalDataAccessApplication.class);
+	@Autowired
+	JdbcTemplate jdbcTemplate;
 
 	public static void main(String args[]) {
 		SpringApplication.run(RelationalDataAccessApplication.class, args);
 	}
-
-	@Autowired
-	JdbcTemplate jdbcTemplate;
 
 	@Override
 	public void run(String... strings) throws Exception {
